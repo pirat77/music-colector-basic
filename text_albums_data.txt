@@ -11,3 +11,4 @@ rock,rock,966,pop,13:37
 Massive Attack,Blue Lines,1991,hip hop,45:02
 Janio,Love and Passion,2009,happy hc,12:12
 Kalina,Love and force,1999,Power,13:13
+Janek,Wojna,2001,speedcore,11:09

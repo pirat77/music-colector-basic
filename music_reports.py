@@ -1,5 +1,4 @@
 import sys
-import re
 
 def readfile():
     path = sys.argv[0].strip("display.py")
@@ -58,6 +57,7 @@ def add_album(album_data):
     path = sys.argv[0].strip("display.py")    
     f = open(path + 'text_albums_data.txt', 'a')
     f.write(','.join(album_data))
+    f.write('\n')
     f.close()  
     return 0
 
@@ -78,8 +78,26 @@ def edit_album(album_name, album_data):
         album_data[2] = element['release year']
         album_data[3] = element['genre']
         album_data[4] = element['lenght']
-        print(album_data)
         f.write(','.join(album_data))
         f.write('\n')
     f.close()
 
+def gather_album_data():
+    artist_name = ''
+    album_name = ''
+    release_year = ''
+    genre = ''
+    lenght = ''
+    while artist_name == '':
+        artist_name = input('Artist Name: ').replace(',', '')
+    while album_name == '':
+        album_name = input('Album Name: ').replace(',', '')
+    while release_year == '':
+        release_year = input('Release Year: ').replace(',', '')
+    while genre == '':
+        genre = input('Genre: ').replace(',', '')
+    while lenght == '':
+        lenght = input('Lenght (mm:ss): ').replace(',', '')
+    album_data = [artist_name, album_name, release_year, genre, lenght]
+    return album_data
+    

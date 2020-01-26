@@ -11,19 +11,6 @@ def readfile():
         albums_dict.append(dict(zip(data_structure, element.strip("\n").split(','))))
     return albums_dict
 
-def report_albums():
-    report = []
-    for element in readfile():
-        report.append(element)
-    return report
-
-def report_genre(album_genre):
-    report = []
-    for element in readfile():
-        if element['genre'] == album_genre:
-            report.append(element)
-    return report
-
 def report_time_range(x, y):
     report = []
     for element in readfile():
@@ -31,22 +18,20 @@ def report_time_range(x, y):
             report.append(element)
     return report
 
-def sort_by_lenght():
+def sort_by_key(key):
     album_dict = readfile()
-    sorted_album_dict = sorted(album_dict, key=lambda k: k['lenght'].zfill(7))
+    sorted_album_dict = sorted(album_dict, key=lambda k: k[key].zfill(7))
     return sorted_album_dict
 
-def report_artist(artist_name):
+
+def find_albums_by_value_of_key(value, key):
     report = []
     for element in readfile():
-        if element['artist name'] == artist_name:
+        if value == '' or element[key] == value:
             report.append(element)
     return report
 
-def find_album_by_name(album_name):
-    report = []
-    for element in readfile():
-        if element['album name'] == album_name:
-            report.append(element)
-    return report
+def find_albums_by_comprasion_of_value_key(value, key, operation):
+    report = sort_by_key(key)
+    
 

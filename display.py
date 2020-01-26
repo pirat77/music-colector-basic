@@ -16,8 +16,5 @@ def print_center_list(input_list):
 
 
 
-#print(report_albums())
-#print(report_genre('pop'))
-#print(report_time_range(1990, 2000))
-#print(sort_by_lenght())
-print_center_list(report_artist('Pink Floyd'))
+print_center_list(find_albums_by_value_of_key('pop', 'genre'))
+

@@ -6,7 +6,6 @@ Old Timers,Old Time,966,ancient,123:45
 Pink Floyd,Wish You Were Here,1975,progressive rock,44:28
 Boston,Boston,1976,hard rock,37:41
 Monika Brodka,Granada,2010,pop,37:42
-David Bowie,Low,1977,rock,38:26
+David Bowie,High,1977,rock,38:26
 rock,rock,966,pop,13:37
 Massive Attack,Blue Lines,1991,hip hop,45:02
-Paktofonika,Kinematografia,1999,hip hop,44:44

@@ -61,6 +61,25 @@ def add_album(album_data):
     f.close()  
     return 0
 
-
-
+def edit_album(album_name, album_data):
+    path = sys.argv[0].strip("display.py")    
+    album_dict = readfile()
+    for element in album_dict:
+        if element['album name'].lower() == album_name.lower():
+            element['artist name'] = album_data[0]
+            element['album name'] = album_data[1]
+            element['release year'] = album_data[2]
+            element['genre'] = album_data[3]
+            element['lenght'] = album_data[4]
+    f = open(path + 'text_albums_data.txt', 'w')
+    for element in album_dict:
+        album_data[0] = element['artist name']
+        album_data[1] = element['album name']
+        album_data[2] = element['release year']
+        album_data[3] = element['genre']
+        album_data[4] = element['lenght']
+        print(album_data)
+        f.write(','.join(album_data))
+        f.write('\n')
+    f.close()
 

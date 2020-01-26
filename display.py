@@ -15,6 +15,7 @@ def print_center_list(input_list):
         print()
 
 
-add_album(['Paktofonika', 'Kinematografia', '1999', 'hip hop', '44:44'])
-print_center_list(find_albums_by_comprasion_of_value_key('44:45', 'lenght', 'lower'))
+edit_album('Low', ['David Bowie','High','1977','rock','38:26'])
+
+# print_center_list(find_albums_by_comprasion_of_value_key('39:45', 'lenght', 'lower'))
 

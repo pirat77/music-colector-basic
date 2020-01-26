@@ -50,5 +50,17 @@ def find_albums_by_comprasion_of_value_key(value, key, operation):
                 reportz.append(element)
         return reportz
     
-    
+def add_album(album_data):
+    album_dict = readfile()
+    for element in album_dict:
+        if element['album name'].lower() == album_data[1].lower():
+            return 1
+    path = sys.argv[0].strip("display.py")    
+    f = open(path + 'text_albums_data.txt', 'a')
+    f.write(','.join(album_data))
+    f.close()  
+    return 0
+
+
+
 

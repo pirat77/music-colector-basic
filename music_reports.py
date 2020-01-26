@@ -44,6 +44,9 @@ def report_artist(artist_name):
     return report
 
 def find_album_by_name(album_name):
-    
-
+    report = []
+    for element in readfile():
+        if element['album name'] == album_name:
+            report.append(element)
+    return report
 

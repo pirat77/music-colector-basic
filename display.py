@@ -16,5 +16,5 @@ def print_center_list(input_list):
 
 
 
-print_center_list(find_albums_by_value_of_key('pop', 'genre'))
+print_center_list(find_albums_by_comprasion_of_value_key('160:00', 'lenght', 'lower'))
 

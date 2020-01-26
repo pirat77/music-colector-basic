@@ -20,18 +20,35 @@ def report_time_range(x, y):
 
 def sort_by_key(key):
     album_dict = readfile()
-    sorted_album_dict = sorted(album_dict, key=lambda k: k[key].zfill(7))
+    sorted_album_dict = sorted(album_dict, key=lambda k: k[key].zfill(30))
     return sorted_album_dict
 
 
 def find_albums_by_value_of_key(value, key):
     report = []
     for element in readfile():
-        if value == '' or element[key] == value:
+        if value == '' or element[key].lower() == value.lower():
             report.append(element)
     return report
 
 def find_albums_by_comprasion_of_value_key(value, key, operation):
     report = sort_by_key(key)
+    if operation == 'lowest':
+        return [report[0]]
+    elif operation == 'highest':
+        return [report[-1]]
+    elif operation == 'higher':
+        reportz = []
+        for element in report:
+            if (element[key].zfill(30)) > (value.zfill(30)):
+                reportz.append(element)
+        return reportz    
+    elif operation == 'lower':
+        reportz = []
+        for element in report:
+            if (element[key].zfill(30)) < (value.zfill(30)):
+                reportz.append(element)
+        return reportz
+    
     
 

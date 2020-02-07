@@ -14,7 +14,7 @@ def main():
         print('\n')
         action = input('Choose your action: ')
         print('\n')
-        if action.lower() == 'add album':            
+        if action.lower() == 'add album':           
             add_album(gather_album_data())
         elif action.lower() == 'edit album':
             album_name = input('Album name: ')

@@ -1,4 +1,5 @@
 import sys
+import re
 
 def readfile():
     path = sys.argv[0].strip("display.py")
@@ -90,14 +91,43 @@ def gather_album_data():
     lenght = ''
     while artist_name == '':
         artist_name = input('Artist Name: ').replace(',', '')
+        try:
+            artist_name = str(artist_name)
+        except ValueError:
+            print('Artist name should be string')
+            artist_name = ''
     while album_name == '':
         album_name = input('Album Name: ').replace(',', '')
+        try:
+            album_name = str(album_name)
+        except ValueError:
+            print('Album name should be string')
+            album_name = ''
     while release_year == '':
         release_year = input('Release Year: ').replace(',', '')
+        try:
+            release_year = int(release_year)
+        except ValueError:
+            print('Release year should be integer')
+            release_year = ''
+        else:
+            release_year = str(release_year)
     while genre == '':
         genre = input('Genre: ').replace(',', '')
+        try:
+            genre = str(genre)
+        except ValueError:
+            print('Genre should be string')
+            album_name = ''
     while lenght == '':
         lenght = input('Lenght (mm:ss): ').replace(',', '')
+        if re.match('[0-9]{1,3}:[0-6][0-9]', lenght):
+            continue
+        else:
+            print('Bad format')
+            lenght = ''
+
+
     album_data = [artist_name, album_name, release_year, genre, lenght]
     return album_data
     
